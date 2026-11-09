@@ -11,14 +11,12 @@
 
 <body>
 
-
     <video class="background-video" autoplay muted loop playsinline>
-    <source src="media/videoplayback.mp4" type="video/mp4">
-</video>
+        <source src="media/videoplayback.mp4" type="video/mp4">
+    </video>
     <div class="video-overlay"></div>
 
     <nav class="site-nav">
-
         <a href="index.html">Home</a>
         <a href="about.html">Meet the characters</a>
         <a href="contact.html">Contact</a>
@@ -29,9 +27,8 @@
         <div class="home-hero-row">
             <figure class="home-trailer">
                 <video controls poster="images/dmc5trailerpreview.jpg">
-        <source src="media/dmc5_trailer.mp4" type="video/mp4">
-    </video>
-
+                    <source src="media/dmc5_trailer.mp4" type="video/mp4">
+                </video>
                 <figcaption class="trailer1">
                     <a href="https://youtu.be/KMSGj9Y2T9Q?si=lmXnsOdMB5d6IK76">Watch trailer of DMC5</a>
                 </figcaption>
@@ -56,6 +53,7 @@
                 </div>
             </div>
         </div>
+
         <h2 style="-webkit-text-stroke: 1px purple;">🎮The Game Awards🏆</h2>
         <div class="award-gallery">
             <div class="Japan-Awards">
@@ -70,7 +68,6 @@
                 <img src="images/goldenjoystick.png" alt="Golden Joystick Award">
             </div>
         </div>
-
     </main>
 
     <section class="features">
@@ -99,96 +96,53 @@
         </div>
     </section>
 
-
     <section id="gallery" class="py-5 bg-gray">
-
         <div class="container">
-
-
-
             <div class="row g-4">
-
                 <div class="col-12 col-md-6 col-lg-4">
-
                     <div class="card h-100">
-
-                        <img src="images/world.jpg" alt="DMC5">
-
+                        <img src="images/world.jpg" class="card-img-top" alt="DMC5">
                         <div class="card-body">
-
-                            <h5>
-                                Dark World
-                            </h5>
-
+                            <h5 class="card-title">Dark World</h5>
                             <p class="card-text">
                                 Explore dangerous locations filled with demons.
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
                 <div class="col-12 col-md-6 col-lg-4">
-
                     <div class="card h-100">
-
                         <img src="images/weap.jpg" class="card-img-top" alt="DMC5">
-
                         <div class="card-body">
-
-                            <h5 class="card-title">
-                                Weapons
-                            </h5>
-
+                            <h5 class="card-title">Weapons</h5>
                             <p class="card-text">
                                 Use different weapons and abilities.
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
                 <div class="col-12 col-md-6 col-lg-4">
-
                     <div class="card h-100">
-
                         <img src="images/battle.jpg" class="card-img-top" alt="DMC5">
-
                         <div class="card-body">
-
-                            <h5 class="card-title">
-                                Battles
-                            </h5>
-
+                            <h5 class="card-title">Battles</h5>
                             <p class="card-text">
                                 Fight powerful enemies and bosses.
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
     <section class="battle-section" id="battle">
         <h2>Dante vs Demon</h2>
-
         <p>Choose your moment and defeat the demon!</p>
 
         <div class="battle-container">
-
             <div class="fighter">
                 <h3>Dante</h3>
                 <p>HP: <span id="danteHP">100</span></p>
@@ -206,7 +160,6 @@
                     <div id="demonBar" class="hp-fill"></div>
                 </div>
             </div>
-
         </div>
 
         <p id="message" aria-live="polite">The battle begins!</p>
@@ -214,10 +167,6 @@
         <button id="attack" type="button">Attack</button>
         <button id="restart" type="button">Restart</button>
     </section>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <section class="faq-section">
         <h2>Frequently Asked Questions</h2>
@@ -245,26 +194,26 @@
     </section>
 
     <footer class="site-footer">
-    <h3>DEVIL MAY CRY 5</h3>
+        <h3>DEVIL MAY CRY 5</h3>
+        <p>Experience the world of demons, battles and legendary hunters.</p>
 
-    <p>Experience the world of demons, battles and legendary hunters.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Characters</a>
+            <a href="contact.html">Contact</a>
+            <a href="#battle">Fight</a>
+        </div>
 
-    <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">Characters</a>
-        <a href="contact.html">Contact</a>
-        <a href="#battle">Fight</a>
-    </div>
+        <p class="copyright">
+            © 2026 Devil May Cry 5 Fan Website. All rights reserved.
+        </p>
 
-    <p class="copyright">
-        © 2026 Devil May Cry 5 Fan Website. All rights reserved.
-    </p>
+        <p class="disclaimer">
+            This is a fan-made educational project. Not affiliated with Capcom.
+        </p>
+    </footer>
 
-    <p class="disclaimer">
-        This is a fan-made educational project. Not affiliated with Capcom.
-    </p>
-</footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/game.js"></script>
     <script src="js/index.js"></script>
