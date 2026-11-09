@@ -1,72 +1,109 @@
-<link rel="stylesheet" href="css/style.css">
-<nav>
+<!DOCTYPE html>
+<html lang="en">
 
-    <a class="fixed-home" href="index.html">Home</a>
-    <a class="fixed-contact" href="contact.html">Contact</a>
-    <a class="fixed-about" href="about.html">Learn more about Devil May Cry 5 here</a>
-</nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMC5 - Fan Form</title>
 
-<h1>Contact Me</h1>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
 
-<form action="#" method="post">
+    <script src="js/contact.js" defer></script>
+</head>
 
-    <fieldset>
-        <legend>Devil May Cry 5 Fan Form</legend>
+<body>
+    <video class="background-video" autoplay muted loop playsinline>
+        <source src="media/videoplayback.mp4" type="video/mp4">
+    </video>
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    <div class="video-overlay"></div>
 
-        <br><br>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">Meet the characters</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="index.html#battle">Fight</a>
+    </nav>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <main>
+        <h1>Contact Me</h1>
 
-        <br><br>
+        <form id="fanForm" action="#" method="post">
+            <fieldset>
+                <legend>Devil May Cry 5 Fan Form</legend>
 
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" min="13" max="100">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input class="form-control" type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <small class="error" id="nameError"></small>
+                </div>
 
-        <br><br>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <small class="error" id="emailError"></small>
+                </div>
 
-        <label for="date">Favorite game date:</label>
-        <input type="date" id="date" name="date">
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input class="form-control" type="number" id="age" name="age" min="13" max="100" required>
+                    <small class="error" id="ageError"></small>
+                </div>
 
-        <br><br>
+                <div class="form-group">
+                    <label for="date">Your birthday:</label>
+                    <input class="form-control" type="date" id="date" name="date" required>
+                    <small class="error" id="dateError"></small>
+                </div>
 
-        <label for="color">Favorite color:</label>
-        <input type="color" id="color" name="color">
+                <div class="form-group">
+                    <label for="color">Favorite color:</label>
+                    <input class="form-control form-control-color" type="color" id="color" name="color" value="#ff0000">
+                </div>
 
-        <br><br>
+                <div class="form-group">
+                    <p>Who is your favorite character?</p>
 
-        <p>Who is your favorite character?</p>
+                    <input class="form-check-input" type="radio" id="dante" name="character" value="Dante" required>
+                    <label for="dante">Dante</label>
 
-        <input type="radio" id="dante" name="character" value="Dante">
-        <label for="dante">Dante</label>
+                    <input class="form-check-input" type="radio" id="nero" name="character" value="Nero">
+                    <label for="nero">Nero</label>
 
-        <input type="radio" id="nero" name="character" value="Nero">
-        <label for="nero">Nero</label>
+                    <input class="form-check-input" type="radio" id="vergil" name="character" value="Vergil">
+                    <label for="vergil">Vergil</label>
 
-        <input type="radio" id="vergil" name="character" value="Vergil">
-        <label for="vergil">Vergil</label>
+                    <input class="form-check-input" type="radio" id="v" name="character" value="V">
+                    <label for="v">V</label>
 
-        <input type="radio" id="V" name="character" value="V">
-        <label for="V">V</label>
+                    <small class="error" id="characterError"></small>
+                </div>
 
-        <br><br>
+                <div class="form-group">
+                    <input class="form-check-input" type="checkbox" id="fan" name="fan">
+                    <label for="fan">I am a Devil May Cry fan</label>
+                </div>
 
-        <input type="checkbox" id="fan" name="fan">
-        <label for="fan">I am a Devil May Cry fan</label>
+                <div class="form-group">
+                    <label for="message">Your message:</label>
+                    <textarea class="form-control" id="message" name="message" maxlength="300" placeholder="Write at least 10 characters" required></textarea>
+                    <small class="error" id="messageError"></small>
+                </div>
 
-        <br><br>
+                <p id="errorSummary" role="alert" tabindex="-1"></p>
 
-        <label for="message">Your message:</label>
-        <br>
-        <textarea id="message" name="message" maxlength="300" placeholder="Write your message"></textarea>
+                <button class="btn btn-danger" type="submit">Send</button>
+                <button class="btn btn-secondary" type="reset">Reset</button>
+            </fieldset>
+        </form>
 
-        <br><br>
+        <section id="successMessage" hidden>
+            <h2>Profile Created Successfully!</h2>
+            <div id="finalProfile"></div>
+        </section>
+    </main>
+</body>
 
-        <input type="submit" value="Send">
-
-    </fieldset>
-
-</form>
+</html>
