@@ -204,3 +204,70 @@ button:active {
         animation-duration: 0.01ms !important;
     }
 }
+
+
+/* Light theme - Contact page */
+
+body.light-mode main {
+    color: #202020;
+}
+
+body.light-mode main h1,
+body.light-mode main h2 {
+    color: #202020;
+}
+
+body.light-mode #fanForm {
+    background: rgba(255, 255, 255, 0.94);
+    color: #202020;
+    border: 1px solid #dddddd;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+body.light-mode #fanForm fieldset {
+    border-color: #cccccc;
+}
+
+body.light-mode #fanForm legend,
+body.light-mode #fanForm label,
+body.light-mode #fanForm p {
+    color: #202020;
+}
+
+body.light-mode #fanForm .form-control {
+    background-color: #ffffff;
+    color: #202020;
+    border-color: #bbbbbb;
+}
+
+body.light-mode #fanForm .form-control:focus {
+    background-color: #ffffff;
+    color: #202020;
+    border-color: #d71920;
+    box-shadow: 0 0 0 0.2rem rgba(215, 25, 32, 0.15);
+}
+
+body.light-mode #fanForm input::placeholder,
+body.light-mode #fanForm textarea::placeholder {
+    color: #777777;
+}
+
+body.light-mode #fanForm .form-check-input {
+    background-color: #ffffff;
+    border-color: #777777;
+}
+
+body.light-mode #fanForm .form-check-input:checked {
+    background-color: #d71920;
+    border-color: #d71920;
+}
+
+body.light-mode #successMessage {
+    background: #ffffff;
+    color: #202020;
+    border: 1px solid #dddddd;
+}
+
+body.light-mode #errorSummary {
+    color: #b00020;
+}

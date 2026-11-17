@@ -1,146 +1,423 @@
-.controls {
+.about-hero {
+    min-height: 330px;
+    padding: 100px 20px 70px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
-    margin: 25px 0;
+    justify-content: center;
+    text-align: center;
 }
 
-.controls label {
-    color: white;
+.about-subtitle,
+.database-heading>span,
+.access-header>span {
+    color: #e63939;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
 }
 
-.controls input,
-.controls select {
-    padding: 10px;
-    max-width: 100%;
-    background: #222;
-    color: white;
-    border: 1px solid #777;
-    border-radius: 4px;
+.about-hero h1 {
+    margin: 18px 0;
+    color: #fff;
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
-.controls input:focus,
-.controls select:focus {
-    outline: 2px solid #ff3333;
-    outline-offset: 2px;
+.about-hero h1 span,
+.database-heading h2 span,
+.characters-heading h2 span {
+    color: #e63939;
+}
+
+.about-hero p {
+    color: #c5c5c5;
+    font-size: 16px;
+}
+
+.about-hero-line {
+    width: 75px;
+    height: 3px;
+    margin-top: 20px;
+    background: #e63939;
+    box-shadow: 0 0 15px #e63939;
+}
+
+.database-section {
+    width: min(1150px, 92%);
+    margin: 0 auto;
+    padding: 45px 0 90px;
+}
+
+.database-heading {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.database-heading h2,
+.characters-heading h2 {
+    margin: 12px 0;
+    color: #fff;
+    font-size: clamp(27px, 4vw, 40px);
+    font-weight: 800;
+}
+
+.database-heading p,
+.characters-heading p {
+    color: #aaa;
+    font-size: 15px;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    max-width: 850px;
+    margin: 0 auto 35px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.control-group label {
+    color: #ddd;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.control-group input,
+.control-group select {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    outline: none;
+    background: rgba(15, 15, 15, 0.9);
+    color: #fff;
+    font-size: 14px;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.control-group input::placeholder {
+    color: #777;
+}
+
+.control-group select option {
+    background: #171717;
+    color: #fff;
+}
+
+.control-group input:focus,
+.control-group select:focus {
+    border-color: #e63939;
+    box-shadow: 0 0 0 3px rgba(230, 57, 57, 0.15);
 }
 
 .statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 45px 0 75px;
+}
+
+.stat-card {
+    min-height: 150px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 15px;
-    background: #1a1a1a;
-    border-radius: 8px;
-    margin-bottom: 25px;
+    background: rgba(20, 20, 20, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    border-color: #e63939;
+}
+
+.stat-icon {
+    margin-bottom: 10px;
+    color: #e63939;
+    font-size: 25px;
+}
+
+.stat-card p {
+    margin-bottom: 7px;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.stat-card strong {
+    color: #fff;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.characters-heading {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 #characterList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .character-card {
-    background: #1c1c1c;
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
+    position: relative;
     overflow: hidden;
-    transition: transform 0.25s, border-color 0.25s;
+    min-width: 0;
+    padding: 22px;
+    background: rgba(18, 18, 18, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .character-card:hover {
-    transform: translateY(-5px);
-    border-color: #ff3333;
+    transform: translateY(-7px);
+    border-color: #e63939;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .character-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 4px;
     display: block;
-    margin-bottom: 15px;
-}
-
-.image-fallback {
-    height: 80px;
-    padding-top: 30px;
-    color: #aaa;
+    width: 100%;
+    height: 230px;
+    margin-bottom: 18px;
+    object-fit: contain;
+    object-position: center;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 8px;
 }
 
 .character-card h3 {
-    color: #ff3333;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 800;
 }
 
 .character-card p {
-    color: #ddd;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.character-card strong {
+    color: #e63939;
+}
+
+.image-fallback {
+    width: 100%;
+    height: 230px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #252525;
+    border-radius: 8px;
+    color: #888;
+    font-size: 14px;
 }
 
 .unlock-button {
-    padding: 10px 15px;
-    background: darkred;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    width: 100%;
+    min-height: 43px;
+    margin-top: 12px;
+    border: 1px solid #e63939;
+    border-radius: 6px;
+    background: #e63939;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.25s, color 0.25s, transform 0.25s;
 }
 
 .unlock-button:hover {
-    background: red;
-}
-
-.unlock-button:focus-visible {
-    outline: 2px solid white;
-    outline-offset: 3px;
+    transform: translateY(-2px);
+    background: transparent;
+    color: #ff5555;
 }
 
 #noResults {
+    padding: 35px 15px;
+    color: #aaa;
     text-align: center;
-    color: #ff7777;
-    padding: 20px;
+    font-size: 16px;
+}
+
+.access-backdrop {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(5px);
+}
+
+.access-backdrop.is-visible {
+    display: block;
 }
 
 .character-details {
-    margin-top: 30px;
-    padding: 20px;
-    background: rgba(20, 20, 20, 0.9);
-    border: 1px solid #444;
-    border-radius: 8px;
-    text-align: center;
+    position: fixed;
+    z-index: 1001;
+    top: 50%;
+    left: 50%;
+    width: min(500px, calc(100% - 32px));
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 28px;
+    display: none;
+    transform: translate(-50%, -48%);
+    background: #171717;
+    border: 1px solid rgba(230, 57, 57, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.7);
 }
 
-.character-details h3 {
-    color: #ff3333;
+.character-details.is-visible {
+    display: block;
 }
 
-@media (max-width: 500px) {
-    .controls {
-        flex-direction: column;
-        align-items: stretch;
+.access-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#closeAccess {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+#closeAccess:hover {
+    background: #e63939;
+    border-color: #e63939;
+}
+
+.character-details h2 {
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.character-details p {
+    color: #bbb;
+    line-height: 1.7;
+}
+
+#actionArea {
+    margin-top: 20px;
+}
+
+#actionArea button {
+    margin: 5px;
+}
+
+@media (max-width: 900px) {
+    #characterList {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .controls input,
-    .controls select {
-        width: 100%;
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        min-height: 280px;
+        padding: 80px 18px 55px;
+    }
+    .database-section {
+        padding-top: 30px;
+    }
+    .statistics {
+        gap: 12px;
+        margin: 35px 0 55px;
+    }
+    .stat-card {
+        min-height: 125px;
+        padding: 18px 10px;
+    }
+    .stat-card strong {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 576px) {
+    .controls {
+        grid-template-columns: 1fr;
     }
     #characterList {
         grid-template-columns: 1fr;
     }
-    .character-card img {
-        height: 280px;
+    .statistics {
+        grid-template-columns: 1fr;
+    }
+    .stat-card {
+        min-height: 110px;
+    }
+    .character-card img,
+    .image-fallback {
+        height: 250px;
+    }
+    .character-details {
+        padding: 22px;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .character-card,
-    .unlock-button {
-        transition: none;
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
-    .character-card:hover {
-        transform: none;
-    }
+}
+
+
+/* Light theme - Character cards */
+
+body.light-mode .character-card {
+    background: #ffffff !important;
+    color: #202020 !important;
+    border: 1px solid #dddddd;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .character-card h2,
+body.light-mode .character-card h3,
+body.light-mode .character-card h4,
+body.light-mode .character-card p,
+body.light-mode .character-card span {
+    color: #202020;
+}
+
+body.light-mode .character-card .character-type,
+body.light-mode .character-card .character-description {
+    color: #555555;
 }

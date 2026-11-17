@@ -65,9 +65,10 @@ function renderCharacters() {
         power.textContent = "Power: " + character.power + "/100";
 
         const button = document.createElement("button");
-        button.className = "unlock-button";
+        button.className = "unlock-button view-btn";
         button.dataset.action = "unlock";
         button.dataset.id = character.id;
+        button.type = "button";
         button.textContent = character.unlocked ? "View character" : "Unlock character";
 
         card.append(image, name, type, weapon, power, button);
@@ -93,6 +94,13 @@ function renderCharacters() {
 searchInput.addEventListener("input", renderCharacters);
 typeFilter.addEventListener("change", renderCharacters);
 
+// Скрываем блок с деталями при загрузке страницы
+const accessBox = document.getElementById("character-access-box");
+if (accessBox) {
+    accessBox.style.display = "none";
+}
+
+// Обработчик клика через делегирование событий (работает с jQuery или чистым JS)
 characterList.addEventListener("click", function(event) {
     const button = event.target.closest("button[data-action='unlock']");
 
@@ -114,6 +122,39 @@ characterList.addEventListener("click", function(event) {
         actionMessage.textContent = character.name + " is available in the database.";
     } else {
         actionMessage.textContent = character.name + " is locked. Reason: this character is restricted in this demo catalog.";
+    }
+
+    if (accessBox) {
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        // 1. Сначала ставим display: block, но класс анимации НЕ добавляем
+        accessBox.style.display = "block";
+        accessBox.classList.remove("is-visible");
+
+        if (prefersReducedMotion) {
+            accessBox.classList.add("is-visible");
+        } else {
+            // 2. Двойной requestAnimationFrame заставляет браузер сделать паузу на один кадр
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    accessBox.classList.add("is-visible");
+                });
+            });
+        }
+    }
+});
+
+// Клик вне модального окна закрывает его
+document.addEventListener("click", function(e) {
+    if (accessBox && accessBox.classList.contains("is-visible")) {
+        if (!e.target.closest("#character-access-box") && !e.target.closest("button[data-action='unlock']")) {
+            accessBox.classList.remove("is-visible");
+            setTimeout(function() {
+                if (!accessBox.classList.contains("is-visible")) {
+                    accessBox.style.display = "none";
+                }
+            }, 300);
+        }
     }
 });
 
